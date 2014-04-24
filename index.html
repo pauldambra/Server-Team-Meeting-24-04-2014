@@ -27,6 +27,9 @@
 				document.getElementsByTagName( 'head' )[0].appendChild( link );
 			}
 		</script>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
 		<script src="js/countdown.js"></script>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -51,9 +54,27 @@
 					</p>
 				</section>
 
-				<section id="fragments">
+				<section id="fragments" data-state="startCountdown">
 					<h2>Testing JS...</h2>
 					<h3>Do you really need convincing?</h3>
+					<p>
+					We will never resolve TDD today so we're allowed to talk about TDD for a maximum of three minutes:<br/>
+					<div style="width:410px;margin:auto">
+					<span id="clock"></span>
+					<script>
+						Reveal.addEventListener( 'startCountdown', function() {
+						    countdown(
+							    moment().add('m',3),
+							    function(ts) {
+							      document.getElementById('clock').innerHTML = ts.toHTML("strong");
+							    },
+							    countdown.MINUTES|countdown.SECONDS);
+						}, false );
+					</script>
+					</div>
+
+					</p>
+<br/>
 					<p>
 						The arguments for testing your JS are
 						<ul>
@@ -63,21 +84,6 @@
 						</ul>
 					</p>
 					
-					<p>
-					We will never resolve TDD today so we're allowed to talk about TDD for a maximum of three minutes:<br/>
-					<div style="width:200px;margin:auto">
-					<script>
-					var myCountdown2 = new Countdown({
-									time: 180, 
-									width:150, 
-									height:80, 
-									rangeHi:"minute"
-									});
-
-					</script>
-					</div>
-
-					</p>
 					<aside class="notes">
 						<a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1201238&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1201238">2003 conference paper from IBM suggests a 50% reduction in defects when TDD (not testing) was implemented
 						</a>
@@ -289,9 +295,6 @@ describe("Shopping Cart", function () {
 			</div>
 
 		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
 
 		<script>
 
