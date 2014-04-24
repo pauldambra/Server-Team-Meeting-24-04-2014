@@ -54,28 +54,9 @@
 					</p>
 				</section>
 
-				<section id="fragments" data-state="startCountdown">
+				<section id="fragments">
 					<h2>Testing JS...</h2>
 					<h3>Do you really need convincing?</h3>
-					
-					<p>
-					We will never resolve TDD today so we're allowed to talk about TDD for a maximum of three minutes:<br/>
-					<div style="width:410px;margin:auto">
-					<span id="clock"></span>
-					<script>
-						Reveal.addEventListener( 'startCountdown', function() {
-						    countdown(
-							    moment().add('m',3),
-							    function(ts) {
-							      document.getElementById('clock').innerHTML = ts.toHTML("strong");
-							    },
-							    countdown.MINUTES|countdown.SECONDS);
-						}, false );
-					</script>
-					</div>
-
-					</p>
-<br/>
 					<p>
 						The arguments for testing your JS are
 						<ul>
