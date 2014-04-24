@@ -27,7 +27,7 @@
 				document.getElementsByTagName( 'head' )[0].appendChild( link );
 			}
 		</script>
-
+		<script src="js/countdown.js"></script>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -62,7 +62,22 @@
 							<li class="fragment">that's it</li>
 						</ul>
 					</p>
+					
+					<p>
+					We will never resolve TDD today so we're allowed to talk about TDD for a maximum of three minutes:<br/>
+					<div style="width:200px;margin:auto">
+					<script>
+					var myCountdown2 = new Countdown({
+									time: 180, 
+									width:150, 
+									height:80, 
+									rangeHi:"minute"
+									});
 
+					</script>
+					</div>
+
+					</p>
 					<aside class="notes">
 						<a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1201238&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1201238">2003 conference paper from IBM suggests a 50% reduction in defects when TDD (not testing) was implemented
 						</a>
